@@ -2,6 +2,18 @@
 
 import { useState } from 'react';
 
+function gtag_report_conversion(url?: string) {
+  (window as any).gtag('event', 'conversion', {
+    'send_to': 'AW-17928984102/cptECIiLivIbEKasmuVC',
+    'event_callback': function () {
+      if (typeof(url) != 'undefined') {
+        window.location.href = url;
+      }
+    }
+  });
+  return false;
+}
+
 export default function ContactForm() {
   const [formData, setFormData] = useState({
     name: '',
@@ -43,6 +55,7 @@ export default function ContactForm() {
           service: 'Roofing',
           message: ''
         });
+        gtag_report_conversion();
       } else {
         const data = await response.json();
         setStatus('error');

@@ -77,12 +77,20 @@ export default function RootLayout({
           src="https://www.googletagmanager.com/gtag/js?id=G-K5FXENYCDB"
           strategy="afterInteractive"
         />
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=AW-17928984102"
+          strategy="afterInteractive"
+        />
         <Script id="google-analytics" strategy="afterInteractive">
           {`
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
             gtag('config', 'G-K5FXENYCDB');
+            gtag('config', 'AW-17928984102');
+            gtag('config', 'AW-17928984102/EfjUCIWLivIbEKasmuVC', {
+              'phone_conversion_number': '(636) 221-7284'
+            });
           `}
         </Script>
       </head>
