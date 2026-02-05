@@ -1,7 +1,9 @@
 import Link from "next/link";
 import Image from "next/image";
-import { FaPhone, FaEnvelope, FaClock, FaCheckCircle, FaStar, FaTools, FaHome, FaShieldAlt, FaWarehouse } from "react-icons/fa";
+import { FaPhone, FaEnvelope, FaClock, FaCheckCircle, FaStar, FaTools, FaHome, FaShieldAlt, FaWarehouse, FaPaintBrush } from "react-icons/fa";
 import ContactForm from "./components/ContactForm";
+import DesignEyeQ from "./components/DesignEyeQ";
+import GoogleReviews from "./components/GoogleReviews";
 
 export default function Home() {
   const structuredData = {
@@ -287,6 +289,35 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Roof Color Visualizer */}
+      <section className="py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <div className="flex items-center justify-center gap-3 mb-4">
+              <FaPaintBrush className="text-4xl text-red-600" />
+              <h2 className="text-4xl md:text-5xl font-bold text-slate-900">
+                Visualize Your New <span className="text-red-600">Roof</span>
+              </h2>
+            </div>
+            <p className="text-xl text-slate-600 max-w-3xl mx-auto">
+              Try on different shingle colors and styles before you buy! Upload a photo of your home or use our sample images to see how Owens Corning roofing shingles will look on your property.
+            </p>
+          </div>
+          <div className="max-w-6xl mx-auto">
+            <DesignEyeQ />
+          </div>
+          <div className="text-center mt-8">
+            <p className="text-slate-600">
+              Like what you see?{" "}
+              <a href="#contact" className="text-red-600 font-bold hover:text-red-700">
+                Get a free estimate
+              </a>
+              {" "}to make it a reality!
+            </p>
+          </div>
+        </div>
+      </section>
+
       {/* Emergency Services Banner */}
       <section className="py-12 bg-red-600 text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -306,6 +337,26 @@ export default function Home() {
               <FaPhone className="text-2xl" />
               <span>(636) 221-7284</span>
             </a>
+          </div>
+        </div>
+      </section>
+
+      {/* Google Reviews */}
+      <section className="py-20 bg-slate-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <div className="flex items-center justify-center gap-3 mb-4">
+              <FaStar className="text-4xl text-yellow-500" />
+              <h2 className="text-4xl md:text-5xl font-bold text-slate-900">
+                Hear From Our <span className="text-red-600">Happy Customers</span>
+              </h2>
+            </div>
+            <p className="text-xl text-slate-600 max-w-2xl mx-auto">
+              Don't just take our word for it - see what your neighbors have to say about our roofing services
+            </p>
+          </div>
+          <div className="max-w-5xl mx-auto">
+            <GoogleReviews />
           </div>
         </div>
       </section>

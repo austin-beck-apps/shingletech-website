@@ -93,6 +93,10 @@ export default function RootLayout({
             });
           `}
         </Script>
+        <Script
+          src="https://apis.owenscorning.com/client/widget.js"
+          strategy="lazyOnload"
+        />
       </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
