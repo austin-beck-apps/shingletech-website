@@ -38,15 +38,24 @@ export default function ContactForm() {
     setErrorMessage('');
 
     try {
-      const response = await fetch('/api/contact', {
+      // Submit directly to Web3Forms API (client-side)
+      const formDataToSend = new FormData();
+      formDataToSend.append('access_key', '480b35d3-0c47-4eb4-a72f-ab320f297e4d');
+      formDataToSend.append('name', formData.name);
+      formDataToSend.append('phone', formData.phone);
+      formDataToSend.append('email', formData.email);
+      formDataToSend.append('subject', `New Contact Form Submission - ${formData.service}`);
+      formDataToSend.append('message', `Service Needed: ${formData.service}\n\n${formData.message}\n\n---\nContact Information:\nName: ${formData.name}\nPhone: ${formData.phone}\nEmail: ${formData.email}`);
+      formDataToSend.append('from_name', 'ShingleTech Website');
+
+      const response = await fetch('https://api.web3forms.com/submit', {
         method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(formData),
+        body: formDataToSend
       });
 
-      if (response.ok) {
+      const result = await response.json();
+
+      if (result.success) {
         setStatus('success');
         setFormData({
           name: '',
@@ -57,9 +66,8 @@ export default function ContactForm() {
         });
         gtag_report_conversion();
       } else {
-        const data = await response.json();
         setStatus('error');
-        setErrorMessage(data.error || 'Failed to send message. Please try again.');
+        setErrorMessage(result.message || 'Failed to send message. Please try again.');
       }
     } catch (error) {
       setStatus('error');
