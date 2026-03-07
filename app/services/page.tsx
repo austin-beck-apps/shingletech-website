@@ -11,7 +11,22 @@ export default function Services() {
   const services = [
     {
       icon: <FaHome className="text-6xl text-red-600" />,
+      title: "Roofing Services",
+      landingHref: "/services/roofing-services",
+      description: "Complete roofing solutions for Washington, MO and Franklin County—new roofs, replacements, repairs, and storm damage. Licensed, insured, and here when you need us.",
+      features: [
+        "Residential & commercial roofing",
+        "New installation & full replacement",
+        "Repairs & storm damage",
+        "Licensed & insured",
+        "Free estimates",
+        "24/7 emergency service"
+      ]
+    },
+    {
+      icon: <FaHome className="text-6xl text-red-600" />,
       title: "Shingle Roofing",
+      landingHref: "/services/shingle-roofing",
       description: "Professional asphalt shingle roofing installation and repair services for residential properties. We use only premium materials from trusted manufacturers.",
       features: [
         "High-quality asphalt shingles",
@@ -25,6 +40,7 @@ export default function Services() {
     {
       icon: <FaWarehouse className="text-6xl text-red-600" />,
       title: "Siding Installation & Repair",
+      landingHref: "/services/siding-installation-repair",
       description: "Transform your home's exterior with professional siding installation. We specialize in vinyl and fiber cement siding that enhances curb appeal while protecting your home.",
       features: [
         "Vinyl siding installation",
@@ -38,6 +54,7 @@ export default function Services() {
     {
       icon: <FaIndustry className="text-6xl text-red-600" />,
       title: "Metal Roofing",
+      landingHref: "/services/metal-roofing",
       description: "Durable, energy-efficient metal roofing solutions that provide long-lasting protection for your home or business.",
       features: [
         "Standing seam metal roofs",
@@ -46,6 +63,20 @@ export default function Services() {
         "Low maintenance requirements",
         "Weather & fire resistant",
         "Modern, attractive aesthetics"
+      ]
+    },
+    {
+      icon: <FaTools className="text-6xl text-red-600" />,
+      title: "Roofing Repair & Storm Damage",
+      landingHref: "/services/roofing-repair-storm-damage",
+      description: "24/7 roof repair and storm damage restoration. We inspect, repair, and work with your insurance so you can get back to normal quickly.",
+      features: [
+        "Storm damage inspection & repair",
+        "Leak detection and repair",
+        "Insurance claim assistance",
+        "24/7 emergency response",
+        "Free estimates & inspections",
+        "Shingle replacement & patching"
       ]
     },
     {
@@ -204,12 +235,22 @@ export default function Services() {
                       </div>
                     ))}
                   </div>
-                  <Link
-                    href="/#contact"
-                    className="inline-block bg-red-600 hover:bg-red-700 text-white px-8 py-3 rounded-lg font-bold transition-colors shadow-lg"
-                  >
-                    Request a Quote
-                  </Link>
+                  <div className="flex flex-wrap gap-4 items-center">
+                    <Link
+                      href="/#contact"
+                      className="inline-block bg-red-600 hover:bg-red-700 text-white px-8 py-3 rounded-lg font-bold transition-colors shadow-lg"
+                    >
+                      Request a Quote
+                    </Link>
+                    {"landingHref" in service && service.landingHref && (
+                      <Link
+                        href={service.landingHref}
+                        className="text-red-600 hover:text-red-700 font-semibold transition-colors"
+                      >
+                        Learn more →
+                      </Link>
+                    )}
+                  </div>
                 </div>
               </div>
             ))}

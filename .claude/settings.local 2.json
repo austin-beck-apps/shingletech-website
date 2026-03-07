@@ -1,0 +1,19 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npx next build:*)",
+      "Bash(npx tsc:*)",
+      "Bash(node -e \"require(''fs'').readFileSync(''/Users/austinbeck/Desktop/ShingleTech/shingletech-website/app/layout.tsx'',''utf8'')\")",
+      "Bash(node -e \"require(''fs'').readFileSync(''/Users/austinbeck/Desktop/ShingleTech/shingletech-website/app/components/ContactForm.tsx'',''utf8'')\")",
+      "Bash(git commit:*)",
+      "WebFetch(domain:www.owenscorning.com)",
+      "Bash(npm run build:*)",
+      "WebSearch",
+      "Bash(git add:*)",
+      "Bash(git push:*)",
+      "Bash(npm install:*)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}
