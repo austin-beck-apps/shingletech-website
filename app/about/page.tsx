@@ -4,7 +4,7 @@ import { FaCheckCircle, FaAward, FaUsers, FaClock, FaPhone, FaEnvelope, FaHome }
 
 export const metadata = {
   title: "About Us | ShingleTech - Roofing Experts in Washington, MO",
-  description: "Learn about ShingleTech, Franklin County's trusted roofing company since 2013. Licensed, insured, and committed to quality workmanship.",
+  description: "Learn about ShingleTech, Missouri's trusted roofing company since 2013. Licensed, insured, and committed to quality workmanship.",
 };
 
 export default function About() {
@@ -95,7 +95,7 @@ export default function About() {
               About ShingleTech
             </h1>
             <p className="text-xl md:text-2xl text-slate-300 max-w-3xl mx-auto">
-              Your trusted roofing partner in Franklin County since 2013
+              Your trusted roofing partner in Missouri since 2013
             </p>
           </div>
         </div>

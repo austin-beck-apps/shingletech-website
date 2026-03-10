@@ -175,7 +175,7 @@ export default function Home() {
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 md:py-32">
           <div className="max-w-3xl">
             <h1 className="text-4xl sm:text-5xl md:text-7xl font-bold mb-6 leading-tight">
-              Franklin County's <span className="text-red-500">Trusted</span> Roofing Experts
+              <span className="text-red-500">Trusted</span> Roofing Experts
             </h1>
             <p className="text-xl md:text-2xl mb-4 text-slate-200">
               Professional Roofing & Siding Solutions for Residential & Commercial Properties
