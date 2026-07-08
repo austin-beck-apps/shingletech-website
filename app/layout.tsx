@@ -2,6 +2,10 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import Script from "next/script";
 import "./globals.css";
+import Header from "./components/Header";
+import Footer from "./components/Footer";
+import LocalBusinessSchema from "./components/LocalBusinessSchema";
+import { BUSINESS } from "./lib/business";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -14,42 +18,53 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://shingletech.com'),
+  metadataBase: new URL(BUSINESS.url),
   title: {
-    default: "ShingleTech | Professional Roofing Services in Washington, MO",
-    template: "%s | ShingleTech"
+    default: "ShingleTech | Roofing Contractor in Washington, MO — Locally Owned Since 2013",
+    template: "%s | ShingleTech",
   },
-  description: "Expert roofing and siding services in Franklin County, MO since 2013. Specializing in shingle roofing, siding installation, metal roofing, commercial flat roofing, and roof coatings. Licensed, insured, and available 24/7 for emergency service.",
+  description:
+    "ShingleTech is a locally owned roofing and siding contractor in Washington, MO. Shingle roofing, metal roofing, siding, storm damage repair & commercial roofing. Licensed, insured, 24/7 emergency service. Free estimates: (636) 221-7284.",
   keywords: [
-    "roofing",
-    "siding",
-    "siding installation",
-    "vinyl siding",
-    "roof repair",
-    "Washington MO",
-    "Franklin County",
+    "roofing contractor Washington MO",
+    "roofer near me",
+    "roof replacement Washington MO",
+    "roof repair Franklin County",
     "shingle roofing",
-    "metal roofing",
+    "metal roofing Missouri",
+    "siding installation Washington MO",
+    "storm damage roof repair",
     "commercial roofing",
-    "emergency roofing",
-    "roof replacement",
-    "TPO roofing",
-    "EPDM roofing",
-    "fiber cement siding"
+    "Owens Corning shingles",
+    "local roofing company",
   ],
-  authors: [{ name: "ShingleTech" }],
+  authors: [{ name: BUSINESS.name }],
+  alternates: {
+    canonical: "/",
+  },
   openGraph: {
-    title: "ShingleTech | Professional Roofing Services in Washington, MO",
-    description: "Expert roofing and siding services in Franklin County, MO since 2013. Licensed, insured, and available 24/7 for emergency service.",
-    url: "https://shingletech.com",
-    siteName: "ShingleTech",
+    title: "ShingleTech | Roofing Contractor in Washington, MO",
+    description:
+      "Locally owned roofing & siding contractor serving Washington, MO since 2013. Licensed, insured, and available 24/7 for emergency service. Free estimates.",
+    url: BUSINESS.url,
+    siteName: BUSINESS.name,
     locale: "en_US",
     type: "website",
+    images: [
+      {
+        url: "/hero-bg.jpg",
+        width: 1200,
+        height: 630,
+        alt: "ShingleTech roofing crew at work in Washington, MO",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "ShingleTech | Professional Roofing Services",
-    description: "Expert roofing and siding services in Franklin County, MO since 2013.",
+    title: "ShingleTech | Roofing Contractor in Washington, MO",
+    description:
+      "Locally owned roofing & siding contractor serving Washington, MO since 2013. Free estimates: (636) 221-7284.",
+    images: ["/hero-bg.jpg"],
   },
   robots: {
     index: true,
@@ -57,10 +72,16 @@ export const metadata: Metadata = {
     googleBot: {
       index: true,
       follow: true,
-      'max-video-preview': -1,
-      'max-image-preview': 'large',
-      'max-snippet': -1,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
     },
+  },
+  other: {
+    "geo.region": "US-MO",
+    "geo.placename": "Washington, Missouri",
+    "geo.position": `${BUSINESS.geo.latitude};${BUSINESS.geo.longitude}`,
+    ICBM: `${BUSINESS.geo.latitude}, ${BUSINESS.geo.longitude}`,
   },
 };
 
@@ -92,15 +113,18 @@ export default function RootLayout({
             });
           `}
         </Script>
-        <Script
-          src="https://apis.owenscorning.com/client/widget.js"
-          strategy="lazyOnload"
-        />
       </head>
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
-        {children}
+      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+        <LocalBusinessSchema />
+        <a
+          href="#main-content"
+          className="sr-only focus:not-sr-only focus:absolute focus:z-[100] focus:top-2 focus:left-2 focus:bg-white focus:text-slate-900 focus:px-4 focus:py-2 focus:rounded-lg focus:shadow-lg"
+        >
+          Skip to main content
+        </a>
+        <Header />
+        <main id="main-content">{children}</main>
+        <Footer />
       </body>
     </html>
   );

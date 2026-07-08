@@ -1,228 +1,59 @@
 # ShingleTech Website
 
-A modern, professional website for ShingleTech roofing company built with Next.js, TypeScript, and Tailwind CSS.
-
-## Features
-
-- ✅ **Modern Design**: Clean, professional design optimized for conversions
-- ✅ **SEO Optimized**: Comprehensive meta tags, structured data, and sitemap for excellent search engine visibility
-- ✅ **Contact Form**: Integrated email functionality using Resend API
-- ✅ **Live Chat Widget**: Tawk.to integration for real-time customer communication
-- ✅ **Fully Responsive**: Mobile-first design that works perfectly on all devices
-- ✅ **Fast Performance**: Built with Next.js for optimal loading speeds
-- ✅ **Service Pages**: Dedicated pages for services, about, and contact information
-- ✅ **24/7 Emergency**: Prominent emergency contact information
-- ✅ **Accessible**: WCAG compliant with semantic HTML
+Professional marketing site for ShingleTech, a locally owned roofing & siding contractor in Washington, MO. Built with Next.js 16 (App Router), TypeScript, and Tailwind CSS 4.
 
 ## Pages
 
-- **Home** - Hero section, services overview, why choose us, contact form
-- **Services** - Detailed information about all roofing services offered
-- **About** - Company story, values, and service area
+| Route | Purpose |
+|---|---|
+| `/` | Home — hero, trust bar, services, Owens Corning visualizer, process, reviews, FAQ, contact form |
+| `/services` | Services overview |
+| `/services/shingle-roofing` | Shingle roofing + OC color explorer & warranty tiers |
+| `/services/metal-roofing` | Metal roofing |
+| `/services/roofing-repair-storm-damage` | Repair & storm damage |
+| `/services/siding-installation-repair` | Siding |
+| `/services/commercial-roofing` | Commercial (TPO/EPDM/coatings) |
+| `/services/roofing-services` | Legacy general landing page (kept for existing Google Ads links) |
+| `/service-areas` + `/service-areas/[city]` | Local-SEO city pages (Washington, Union, Pacific, Sullivan, St. Clair, New Haven, Gray Summit) |
+| `/about` | Story, community commitment, credentials |
+| `/contact` | Estimate form + contact info |
 
-## Tech Stack
+## Architecture Notes
 
-- **Framework**: Next.js 16 with App Router
-- **Language**: TypeScript
-- **Styling**: Tailwind CSS
-- **Icons**: React Icons
-- **Email**: Resend API
-- **Live Chat**: Tawk.to (optional)
-- **Hosting**: Ready for Vercel deployment
-
-## Getting Started
-
-### Prerequisites
-
-- Node.js 18+ and npm installed
-- A Resend account for email functionality (free tier available)
-
-### Installation
-
-1. Clone or navigate to the project directory:
-```bash
-cd shingletech-website
-```
-
-2. Install dependencies:
-```bash
-npm install
-```
-
-3. Set up environment variables:
-   - Copy `.env.example` to `.env.local`
-   - Get your Resend API key from https://resend.com/api-keys
-   - Add your API key to `.env.local`:
-```
-RESEND_API_KEY=re_your_actual_api_key_here
-```
-
-4. Run the development server:
-```bash
-npm run dev
-```
-
-5. Open [http://localhost:3000](http://localhost:3000) in your browser
-
-## Email Setup
-
-The contact form uses Resend to send emails. To set it up:
-
-1. Sign up for a free account at https://resend.com
-2. Get your API key from the dashboard
-3. Add it to your `.env.local` file
-4. (Optional) Verify your own domain in Resend for branded emails
-
-### Default Email Configuration
-
-- **From**: Currently uses Resend's test domain (`onboarding@resend.dev`)
-- **To**: nic@shingletech.com
-- **Reply-To**: Customer's email address from the form
-
-### Using Your Own Domain
-
-To send emails from your own domain (e.g., contact@shingletech.com):
-
-1. Add and verify your domain in Resend dashboard
-2. Update `/app/api/contact/route.ts`:
-```typescript
-from: 'ShingleTech <contact@shingletech.com>'
-```
-
-## Deployment
-
-### Deploy to Vercel (Recommended)
-
-1. Push your code to GitHub
-2. Visit [vercel.com](https://vercel.com) and sign up
-3. Import your repository
-4. Add your environment variables in Vercel dashboard:
-   - `RESEND_API_KEY`
-5. Deploy!
-
-Vercel will automatically:
-- Build and deploy your site
-- Provide a custom domain
-- Enable HTTPS
-- Provide automatic deployments on git push
-
-### Other Hosting Options
-
-The site can also be deployed to:
-- Netlify
-- AWS Amplify
-- Digital Ocean App Platform
-- Any Node.js hosting service
-
-Build command: `npm run build`
-Output directory: `.next`
-
-## SEO Features
-
-This website includes comprehensive SEO optimization:
-
-- **Meta Tags**: Title, description, keywords, Open Graph, Twitter Cards
-- **Structured Data**: JSON-LD schema for RoofingContractor
-- **Semantic HTML**: Proper heading hierarchy and semantic elements
-- **Mobile Friendly**: Responsive design for all devices
-- **Fast Loading**: Optimized images and code splitting
-- **Sitemap**: Automatically generated (add sitemap.xml if needed)
-
-## Customization
-
-### Updating Contact Information
-
-Update contact details in:
-- `/app/page.tsx` (homepage)
-- `/app/services/page.tsx` (services page footer)
-- `/app/about/page.tsx` (about page footer)
-- `/app/api/contact/route.ts` (email recipient)
-
-### Changing Colors
-
-The site uses Tailwind CSS. Main colors:
-- Primary Blue: `blue-600` (change throughout)
-- Dark Backgrounds: `slate-900`, `slate-800`
-- Text: `slate-600`, `slate-700`, `slate-900`
-
-Update in Tailwind config or find/replace color classes.
-
-### Adding Live Chat
-
-See **CHAT_SETUP.md** for detailed instructions on setting up Tawk.to live chat.
-
-Quick setup:
-1. Sign up at https://tawk.to (free)
-2. Get your Property ID and Widget ID
-3. Add to `.env.local`:
-```
-NEXT_PUBLIC_TAWK_PROPERTY_ID=your_property_id
-NEXT_PUBLIC_TAWK_WIDGET_ID=your_widget_id
-```
-4. Restart server
-
-### Adding Google Analytics
-
-1. Get your Google Analytics tracking ID
-2. Add it to `/app/layout.tsx`:
-
-```tsx
-<Script
-  src={`https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX`}
-  strategy="afterInteractive"
-/>
-<Script id="google-analytics" strategy="afterInteractive">
-  {`
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-XXXXXXXXXX');
-  `}
-</Script>
-```
-
-## Project Structure
-
-```
-shingletech-website/
-├── app/
-│   ├── api/
-│   │   └── contact/         # Contact form API endpoint
-│   ├── components/          # React components
-│   │   └── ContactForm.tsx  # Contact form component
-│   ├── services/            # Services page
-│   ├── about/              # About page
-│   ├── layout.tsx          # Root layout with SEO
-│   ├── page.tsx            # Homepage
-│   └── globals.css         # Global styles
-├── public/                 # Static assets
-├── .env.local             # Environment variables (not in git)
-├── .env.example           # Environment variables template
-└── README.md              # This file
-```
+- **`app/lib/business.ts`** is the single source of truth for the business name, phone, email, service areas, services, and verified trust signals (Google rating, BBB, certifications). Edit there; it propagates everywhere including schema markup.
+- **Header/Footer** are shared components rendered from `app/layout.tsx` (with a real mobile hamburger menu).
+- **SEO**: `app/sitemap.ts` and `app/robots.ts` are auto-generated routes. JSON-LD structured data lives in `LocalBusinessSchema` (site-wide RoofingContractor), `Breadcrumbs` (BreadcrumbList), `FaqSection` (FAQPage), and `ServicePageLayout` (Service).
+- **Owens Corning widgets** (official, free — docs at owenscorning.com/en-us/roofing/widgets):
+  - Design EyeQ visualizer on the home page (`OwensCorningSection`)
+  - Duration shingle color explorer on the shingle page (`OcShingleWidgets`)
+  - `app/lib/oc-widget.ts` handles re-loading OC's `widget.js` across client-side navigations, and rewrites injected iframe URLs to `/en-us/` to dodge an X-Frame-Options block on OC's locale redirect. Don't remove that rewrite.
+  - OC's warranty widget (`oc_warranty`) rendered blank when tested (July 2026) — replaced with static warranty content.
+- **Contact form** submits client-side to Web3Forms and fires a Google Ads conversion (`ContactForm.tsx`).
+- **Analytics**: GA4 + Google Ads tags are in `app/layout.tsx`.
 
 ## Development
 
 ```bash
-# Run development server
-npm run dev
-
-# Build for production
-npm run build
-
-# Start production server
-npm start
-
-# Run linter
+npm install
+npm run dev        # http://localhost:3000
+npm run build      # production build
 npm run lint
 ```
 
-## Support
+No environment variables are required for the current site (the old Resend email flow was removed in favor of Web3Forms).
 
-For issues or questions about the website:
-- Contact: nic@shingletech.com
-- Phone: (636) 221-7284
+## Deployment
 
-## License
+Push to GitHub and deploy on Vercel (or any Node host). Build command `npm run build`, output `.next`.
 
-Copyright © 2025 ShingleTech. All rights reserved.
+## Brand
+
+- Primary accent: red-600 (`#dc2626`), dark: slate-900. Defined in `app/globals.css`.
+- Typeface: Geist (loaded via `next/font`).
+
+## Before-launch checklist
+
+- [ ] Confirm the Google reviews link in `GoogleReviewsSection.tsx` points at the live Google Business Profile.
+- [x] Review quotes approved (sourced verbatim from public GuildQuality/BBB reviews).
+- [x] Street address published: 516 W 5th St (footer, contact page, schema). Keep it identical to the Google Business Profile listing.
+- [ ] Submit `https://shingletech.com/sitemap.xml` in Google Search Console after deploy.

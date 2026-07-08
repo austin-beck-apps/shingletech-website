@@ -1,58 +1,83 @@
-import Link from "next/link";
-import { FaHome, FaCheckCircle } from "react-icons/fa";
-import ServiceLandingLayout from "../../components/ServiceLandingLayout";
+import type { Metadata } from "next";
+import ServicePageLayout from "../../components/ServicePageLayout";
+import OcShingleWidgets from "../../components/OcShingleWidgets";
 
-export const metadata = {
-  title: "Shingle Roofing | ShingleTech - Washington, MO",
-  description: "Professional asphalt shingle roofing installation and repair in Franklin County. Premium materials, expert installation, storm damage repair, re-roofing. Free estimates.",
+export const metadata: Metadata = {
+  title: "Shingle Roofing in Washington, MO — Asphalt Roof Replacement & Installation",
+  description:
+    "Expert asphalt shingle roof installation and replacement in Washington, MO. Owens Corning shingles, warranty-backed workmanship, free estimates. Locally owned since 2013.",
+  alternates: { canonical: "/services/shingle-roofing" },
 };
 
 export default function ShingleRoofingPage() {
-  const features = [
-    "High-quality asphalt shingles",
-    "Expert installation techniques",
-    "Storm damage repairs",
-    "Complete re-roofing services",
-    "Free estimates & consultations",
-    "Warranty-backed workmanship",
-  ];
-
   return (
-    <ServiceLandingLayout
-      heroTitle="Shingle Roofing"
-      heroSubtitle="Professional asphalt shingle roofing for your home. Premium materials, expert installation, and lasting results across Franklin County."
+    <ServicePageLayout
+      slug="shingle-roofing"
+      title="Shingle Roofing"
+      heroTitle="Shingle Roofing in Washington, MO"
+      heroSubtitle="Premium asphalt shingle installation and replacement, built to stand up to Missouri wind, hail, and heat — and backed in writing."
+      features={[
+        "Owens Corning shingle systems",
+        "Complete tear-off & re-roof",
+        "Storm damage replacement",
+        "Warranty-backed workmanship",
+        "Free estimates & inspections",
+        "Licensed & insured",
+      ]}
+      sections={[
+        {
+          heading: "Quality Shingle Roofs You Can Trust",
+          body: [
+            "Your roof is your home's first line of defense, and asphalt shingles remain the best combination of durability, appearance, and value for most Missouri homes. ShingleTech installs complete shingle roofing systems — not just shingles, but the underlayment, ice and water barriers, ventilation, and flashing details that determine how long a roof actually lasts.",
+            "We install premium architectural shingles from trusted manufacturers like Owens Corning, in a full range of colors and styles. Every installation follows manufacturer specifications so your material warranty stays fully intact.",
+          ],
+          bullets: [
+            "Architectural & dimensional shingles",
+            "Full tear-off and deck inspection",
+            "Ice & water shield in valleys and eaves",
+            "Proper ridge and soffit ventilation",
+            "Complete flashing replacement",
+            "Magnetic nail sweep and full cleanup",
+          ],
+        },
+        {
+          heading: "Roof Replacement, Done Right",
+          body: [
+            "Most of our shingle projects are complete replacements. We start with a free inspection and an honest answer: if your roof has years of life left, we'll tell you. If it's time, you'll get a clear written quote covering everything — materials, labor, disposal, and timeline — with no surprises mid-project.",
+            "Most residential replacements are completed in one to two days. We protect your landscaping, keep the site tidy, and don't consider the job done until the yard is cleaner than we found it.",
+          ],
+        },
+        {
+          heading: "Choosing the Right Shingle",
+          body: [
+            "Color and style change the entire look of your home. We'll bring samples to your estimate, and you can explore Owens Corning shingle colors right on our website to see what suits your home before we ever meet. From classic weathered wood tones to modern black and slate shades, there's a shingle for every style of home in the Washington area.",
+          ],
+        },
+      ]}
+      faqs={[
+        {
+          question: "How long does an asphalt shingle roof last in Missouri?",
+          answer:
+            "A properly installed architectural shingle roof typically lasts 25–30 years in Missouri's climate. Ventilation, installation quality, and storm exposure all play a role — which is why we install complete roofing systems to manufacturer specifications, not just new shingles.",
+        },
+        {
+          question: "How much does a new shingle roof cost?",
+          answer:
+            "It depends on your roof's size, pitch, complexity, and the shingle you choose. Every ShingleTech quote is free, written, and itemized, so you know exactly what you're paying for. We're happy to quote multiple shingle options so you can compare.",
+        },
+        {
+          question: "How long does a roof replacement take?",
+          answer:
+            "Most residential shingle roof replacements are finished in one to two days, weather permitting. Larger or more complex roofs can take longer — we'll give you a clear timeline with your estimate.",
+        },
+        {
+          question: "Do you install Owens Corning shingles?",
+          answer:
+            "Yes. We install Owens Corning shingle systems, including popular lines like TruDefinition Duration, in the full range of available colors. Use the shingle color explorer on our site to browse options, then ask us for physical samples at your free estimate.",
+        },
+      ]}
     >
-      <section className="py-20 bg-slate-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-col md:flex-row gap-8 items-center bg-white rounded-2xl shadow-xl p-8 md:p-12 border-t-4 border-red-600">
-            <div className="flex-shrink-0">
-              <FaHome className="text-6xl text-red-600" />
-            </div>
-            <div className="flex-1">
-              <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
-                Quality Shingle Roofs You Can Trust
-              </h2>
-              <p className="text-lg text-slate-600 mb-6 leading-relaxed">
-                ShingleTech installs and repairs asphalt shingle roofs using only premium materials from trusted manufacturers. From full re-roofs to storm damage repair, we deliver workmanship that stands up to Missouri weather and comes with the backing you expect.
-              </p>
-              <div className="grid md:grid-cols-2 gap-3 mb-6">
-                {features.map((feature, i) => (
-                  <div key={i} className="flex items-center gap-2">
-                    <FaCheckCircle className="text-red-600 flex-shrink-0" />
-                    <span className="text-slate-700">{feature}</span>
-                  </div>
-                ))}
-              </div>
-              <Link
-                href="/#contact"
-                className="inline-block bg-red-600 hover:bg-red-700 text-white px-8 py-3 rounded-lg font-bold transition-colors shadow-lg"
-              >
-                Request a Quote
-              </Link>
-            </div>
-          </div>
-        </div>
-      </section>
-    </ServiceLandingLayout>
+      <OcShingleWidgets />
+    </ServicePageLayout>
   );
 }

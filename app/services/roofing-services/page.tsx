@@ -1,83 +1,78 @@
+import type { Metadata } from "next";
 import Link from "next/link";
-import { FaHome, FaCheckCircle } from "react-icons/fa";
-import ServiceLandingLayout from "../../components/ServiceLandingLayout";
+import ServicePageLayout from "../../components/ServicePageLayout";
+import { SERVICES } from "../../lib/business";
 
-export const metadata = {
-  title: "Roofing Services | ShingleTech - Washington, MO",
-  description: "Full-service roofing in Franklin County: shingle roofing, metal roofing, repairs, storm damage, and commercial flat roofing. Licensed, insured, 24/7 emergency.",
+export const metadata: Metadata = {
+  title: "Roofing Services in Washington, MO — Replacement, Repair & More",
+  description:
+    "Full-service roofing in Washington, MO: shingle roofing, metal roofing, repairs, storm damage, and commercial flat roofing. Licensed, insured, 24/7 emergency service.",
+  alternates: { canonical: "/services/roofing-services" },
 };
 
-const serviceLinks = [
-  { href: "/services/shingle-roofing", title: "Shingle Roofing", description: "Asphalt shingle installation and replacement" },
-  { href: "/services/metal-roofing", title: "Metal Roofing", description: "Durable metal roofing systems" },
-  { href: "/services/roofing-repair-storm-damage", title: "Roof Repair & Storm Damage", description: "Repairs and storm damage restoration" },
-];
-
 export default function RoofingServicesPage() {
-  const features = [
-    "Residential & commercial roofing",
-    "New installation & full replacement",
-    "Repairs & storm damage",
-    "Licensed & insured",
-    "Free estimates",
-    "24/7 emergency service",
-  ];
-
   return (
-    <ServiceLandingLayout
-      heroTitle="Roofing Services"
-      heroSubtitle="Complete roofing solutions for Washington, MO and Franklin County—from new roofs and replacements to repairs and storm damage."
+    <ServicePageLayout
+      slug="roofing-services"
+      title="Roofing Services"
+      heroTitle="Complete Roofing Services in Washington, MO"
+      heroSubtitle="New roofs, replacements, repairs, and storm damage restoration — one local, licensed team for everything over your head."
+      features={[
+        "Residential & commercial",
+        "New installation & replacement",
+        "Repairs & storm damage",
+        "Licensed & insured",
+        "Free estimates",
+        "24/7 emergency service",
+      ]}
+      sections={[
+        {
+          heading: "Your Local Roofing Experts",
+          body: [
+            "ShingleTech has served the Washington, MO area since 2013 with complete roofing services — asphalt shingle, metal, and commercial flat roofing systems. Whether you need a brand-new roof, a full replacement, or a fast repair, you get one local point of contact, quality materials, and workmanship we stand behind in writing.",
+            "Explore our specific services below, or contact us and we'll point you in the right direction after a free inspection.",
+          ],
+        },
+      ]}
+      faqs={[
+        {
+          question: "Do you handle both residential and commercial roofs?",
+          answer:
+            "Yes. We install and service residential shingle and metal roofs as well as TPO, EPDM, and coated flat roofing systems for commercial buildings throughout the Washington, MO area.",
+        },
+        {
+          question: "How do I know whether I need a repair or a full replacement?",
+          answer:
+            "Start with a free inspection. We'll document your roof's condition with photos and give you an honest recommendation — if a repair will serve you well, that's what we'll quote.",
+        },
+        {
+          question: "Are your estimates really free?",
+          answer:
+            "Always. Every estimate is free, written, and no-obligation, whether it's for a small repair or a complete replacement.",
+        },
+      ]}
     >
-      <section className="py-20 bg-slate-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
-          <div className="flex flex-col md:flex-row gap-8 items-center bg-white rounded-2xl shadow-xl p-8 md:p-12 border-t-4 border-red-600">
-            <div className="flex-shrink-0">
-              <FaHome className="text-6xl text-red-600" />
-            </div>
-            <div className="flex-1">
-              <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
-                Your Local Roofing Experts
-              </h2>
-              <p className="text-lg text-slate-600 mb-6 leading-relaxed">
-                ShingleTech has been serving Franklin County since 2013 with quality roofing—shingle, metal, flat commercial roofs, and more. Whether you need a new roof, replacement, or repair, we deliver professional work and honest communication.
-              </p>
-              <div className="grid md:grid-cols-2 gap-3 mb-6">
-                {features.map((feature, i) => (
-                  <div key={i} className="flex items-center gap-2">
-                    <FaCheckCircle className="text-red-600 flex-shrink-0" />
-                    <span className="text-slate-700">{feature}</span>
-                  </div>
-                ))}
-              </div>
+      {/* Links to specific services */}
+      <section className="py-16 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-3xl font-bold text-slate-900 mb-8 text-center">
+            Explore Our Roofing &amp; Exterior Services
+          </h2>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            {SERVICES.map((s) => (
               <Link
-                href="/#contact"
-                className="inline-block bg-red-600 hover:bg-red-700 text-white px-8 py-3 rounded-lg font-bold transition-colors shadow-lg"
+                key={s.slug}
+                href={`/services/${s.slug}`}
+                className="bg-slate-50 rounded-xl p-7 border border-slate-100 hover:shadow-lg transition-all"
               >
-                Request a Quote
+                <h3 className="text-lg font-bold text-slate-900 mb-2">{s.title}</h3>
+                <p className="text-slate-600 mb-3">{s.short}</p>
+                <span className="text-red-600 font-semibold">Learn more →</span>
               </Link>
-            </div>
-          </div>
-
-          <div>
-            <h2 className="text-3xl font-bold text-slate-900 mb-6 text-center">
-              Our Roofing Services
-            </h2>
-            <div className="grid md:grid-cols-3 gap-6">
-              {serviceLinks.map((s) => (
-                <Link
-                  key={s.href}
-                  href={s.href}
-                  className="block bg-white rounded-xl p-6 shadow-lg hover:shadow-xl border-t-4 border-red-600 transition-all hover:-translate-y-1"
-                >
-                  <h3 className="text-xl font-bold text-slate-900 mb-2">{s.title}</h3>
-                  <p className="text-slate-600">{s.description}</p>
-                  <span className="inline-block mt-3 text-red-600 font-semibold">Learn more →</span>
-                </Link>
-              ))}
-            </div>
+            ))}
           </div>
         </div>
       </section>
-    </ServiceLandingLayout>
+    </ServicePageLayout>
   );
 }

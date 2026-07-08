@@ -1,58 +1,74 @@
-import Link from "next/link";
-import { FaIndustry, FaCheckCircle } from "react-icons/fa";
-import ServiceLandingLayout from "../../components/ServiceLandingLayout";
+import type { Metadata } from "next";
+import ServicePageLayout from "../../components/ServicePageLayout";
 
-export const metadata = {
-  title: "Metal Roofing | ShingleTech - Washington, MO",
-  description: "Metal roofing installation in Franklin County—standing seam, energy-efficient, 50+ year lifespan. Fire and weather resistant. Free estimates.",
+export const metadata: Metadata = {
+  title: "Metal Roofing in Washington, MO — Standing Seam & Metal Roof Installation",
+  description:
+    "Durable, energy-efficient metal roofing installation in Washington, MO. Standing seam systems with 50+ year lifespans, expert local installation, free estimates.",
+  alternates: { canonical: "/services/metal-roofing" },
 };
 
 export default function MetalRoofingPage() {
-  const features = [
-    "Standing seam metal roofs",
-    "Energy-efficient materials",
-    "50+ year lifespan",
-    "Low maintenance requirements",
-    "Weather & fire resistant",
-    "Modern, attractive aesthetics",
-  ];
-
   return (
-    <ServiceLandingLayout
-      heroTitle="Metal Roofing"
-      heroSubtitle="Durable, energy-efficient metal roofing that protects your home for decades. Standing seam and more—built to last in Missouri weather."
-    >
-      <section className="py-20 bg-slate-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-col md:flex-row gap-8 items-center bg-white rounded-2xl shadow-xl p-8 md:p-12 border-t-4 border-red-600">
-            <div className="flex-shrink-0">
-              <FaIndustry className="text-6xl text-red-600" />
-            </div>
-            <div className="flex-1">
-              <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
-                Metal Roofs Built to Last
-              </h2>
-              <p className="text-lg text-slate-600 mb-6 leading-relaxed">
-                Metal roofing from ShingleTech offers long-lasting protection, improved energy efficiency, and a clean, modern look. Ideal for residential and commercial properties throughout Franklin County—we install standing seam and other quality metal systems you can count on.
-              </p>
-              <div className="grid md:grid-cols-2 gap-3 mb-6">
-                {features.map((feature, i) => (
-                  <div key={i} className="flex items-center gap-2">
-                    <FaCheckCircle className="text-red-600 flex-shrink-0" />
-                    <span className="text-slate-700">{feature}</span>
-                  </div>
-                ))}
-              </div>
-              <Link
-                href="/#contact"
-                className="inline-block bg-red-600 hover:bg-red-700 text-white px-8 py-3 rounded-lg font-bold transition-colors shadow-lg"
-              >
-                Request a Quote
-              </Link>
-            </div>
-          </div>
-        </div>
-      </section>
-    </ServiceLandingLayout>
+    <ServicePageLayout
+      slug="metal-roofing"
+      title="Metal Roofing"
+      heroTitle="Metal Roofing in Washington, MO"
+      heroSubtitle="Standing seam and metal roofing systems that outlast shingles, shrug off Missouri weather, and cut cooling costs — installed by a local crew that does it right."
+      features={[
+        "Standing seam systems",
+        "50+ year lifespan",
+        "Energy-efficient finishes",
+        "Wind, hail & fire resistant",
+        "Free estimates",
+        "Licensed & insured",
+      ]}
+      sections={[
+        {
+          heading: "Why Missouri Homeowners Are Switching to Metal",
+          body: [
+            "Metal roofing has become one of the most requested upgrades in the Washington area — and for good reason. A quality metal roof lasts 50 years or more, stands up to the wind and hail that regularly damage shingle roofs, and reflects summer heat instead of absorbing it, which can noticeably lower cooling bills.",
+            "We install concealed-fastener standing seam systems as well as high-quality exposed-fastener panels, in a wide range of colors and profiles that suit everything from farmhouses to modern builds.",
+          ],
+          bullets: [
+            "Standing seam (concealed fastener) panels",
+            "Ribbed & corrugated metal panels",
+            "Wide selection of colors & finishes",
+            "Energy-reflective coatings",
+            "Snow and ice shedding design",
+            "Class A fire rating",
+          ],
+        },
+        {
+          heading: "Installation Quality Matters More With Metal",
+          body: [
+            "A metal roof is only as good as its installation. Panel alignment, fastening, expansion allowance, and flashing details all determine whether a metal roof lasts five decades or leaks in five years. Our crews are experienced specifically with metal systems, and we stand behind the workmanship in writing.",
+            "We'll walk you through the trade-offs between metal and shingle honestly — including cost — so you can make the right call for your home and budget. Sometimes shingles are the smarter choice, and we'll tell you when that's the case.",
+          ],
+        },
+      ]}
+      faqs={[
+        {
+          question: "Is a metal roof worth the extra cost?",
+          answer:
+            "For many homeowners, yes. A metal roof costs more upfront than shingles but typically lasts two to three times longer, resists storm damage better, and can lower cooling costs. If you plan to stay in your home long-term, the lifetime cost often favors metal.",
+        },
+        {
+          question: "Is a metal roof loud when it rains?",
+          answer:
+            "Not on a modern installation. Metal roofing installed over solid decking and underlayment is about as quiet as an asphalt shingle roof — the 'loud barn roof' effect only happens with metal installed over open framing.",
+        },
+        {
+          question: "Can you install metal over my existing shingles?",
+          answer:
+            "In some cases, yes — but we usually recommend a full tear-off so we can inspect the deck and start with a clean, flat surface. We'll assess your specific roof during your free estimate and explain the options.",
+        },
+        {
+          question: "How does metal hold up to hail?",
+          answer:
+            "Very well. Metal panels resist puncture from most hail, and many carry Class 4 impact ratings — the highest available. Large hail can cosmetically dent panels, but the roof's protection is rarely compromised the way shingles can be.",
+        },
+      ]}
+    />
   );
 }

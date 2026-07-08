@@ -1,58 +1,79 @@
-import Link from "next/link";
-import { FaWarehouse, FaCheckCircle } from "react-icons/fa";
-import ServiceLandingLayout from "../../components/ServiceLandingLayout";
+import type { Metadata } from "next";
+import ServicePageLayout from "../../components/ServicePageLayout";
 
-export const metadata = {
-  title: "Siding Installation & Repair | ShingleTech - Washington, MO",
-  description: "Professional siding installation and repair in Franklin County. Vinyl siding, fiber cement (Hardie Board), color consultation, and weatherproof installation. Free estimates.",
+export const metadata: Metadata = {
+  title: "Siding Installation & Repair in Washington, MO — Vinyl & Fiber Cement",
+  description:
+    "Professional siding installation and repair in Washington, MO. Vinyl and fiber cement (James Hardie) siding, expert weatherproof installation, free estimates.",
+  alternates: { canonical: "/services/siding-installation-repair" },
 };
 
-export default function SidingInstallationRepairPage() {
-  const features = [
-    "Vinyl siding installation",
-    "Fiber cement siding (Hardie Board)",
-    "Siding repair & replacement",
-    "Color & style consultation",
-    "Energy-efficient options",
-    "Weatherproof installation",
-  ];
-
+export default function SidingPage() {
   return (
-    <ServiceLandingLayout
-      heroTitle="Siding Installation & Repair"
-      heroSubtitle="Transform your home's exterior with professional siding installation. Vinyl and fiber cement siding that enhances curb appeal and protects your home in Franklin County."
-    >
-      <section className="py-20 bg-slate-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-col md:flex-row gap-8 items-center bg-white rounded-2xl shadow-xl p-8 md:p-12 border-t-4 border-red-600">
-            <div className="flex-shrink-0">
-              <FaWarehouse className="text-6xl text-red-600" />
-            </div>
-            <div className="flex-1">
-              <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
-                Expert Siding for Your Home
-              </h2>
-              <p className="text-lg text-slate-600 mb-6 leading-relaxed">
-                ShingleTech specializes in vinyl and fiber cement siding that stands up to Missouri weather while boosting your home&apos;s value and curb appeal. From full installation to repair and replacement, we deliver quality workmanship and lasting results.
-              </p>
-              <div className="grid md:grid-cols-2 gap-3 mb-6">
-                {features.map((feature, i) => (
-                  <div key={i} className="flex items-center gap-2">
-                    <FaCheckCircle className="text-red-600 flex-shrink-0" />
-                    <span className="text-slate-700">{feature}</span>
-                  </div>
-                ))}
-              </div>
-              <Link
-                href="/#contact"
-                className="inline-block bg-red-600 hover:bg-red-700 text-white px-8 py-3 rounded-lg font-bold transition-colors shadow-lg"
-              >
-                Request a Quote
-              </Link>
-            </div>
-          </div>
-        </div>
-      </section>
-    </ServiceLandingLayout>
+    <ServicePageLayout
+      slug="siding-installation-repair"
+      title="Siding Installation & Repair"
+      heroTitle="Siding Installation & Repair in Washington, MO"
+      heroSubtitle="Transform your home's exterior — and protect it for decades — with professionally installed vinyl or fiber cement siding from a local crew that sweats the details."
+      features={[
+        "Vinyl siding installation",
+        "Fiber cement (Hardie) siding",
+        "Siding repair & replacement",
+        "Color & style consultation",
+        "Energy-efficient options",
+        "Free estimates",
+      ]}
+      sections={[
+        {
+          heading: "Siding That Protects and Transforms",
+          body: [
+            "New siding is one of the most dramatic upgrades you can make to your home — and one of the most protective. Beyond curb appeal, properly installed siding shields your home from moisture, wind, and temperature swings while improving energy efficiency.",
+            "We install premium vinyl siding and fiber cement products, each with full trim, soffit, and fascia work so the finished exterior looks complete and stays weathertight.",
+          ],
+          bullets: [
+            "Insulated & standard vinyl siding",
+            "Fiber cement lap and panel siding",
+            "Soffit, fascia & trim work",
+            "House wrap & moisture barriers",
+            "Wide range of colors & profiles",
+            "Full tear-off and disposal",
+          ],
+        },
+        {
+          heading: "Vinyl or Fiber Cement? We'll Help You Choose",
+          body: [
+            "Vinyl siding offers excellent value, low maintenance, and a huge color selection. Fiber cement costs more but delivers exceptional durability, a premium painted-wood look, and outstanding fire and impact resistance. During your free consultation we'll show you samples of both, talk through maintenance and budget honestly, and help you pick what actually fits your home.",
+          ],
+        },
+        {
+          heading: "Repairs and Storm Damage Too",
+          body: [
+            "Cracked panels, wind-lifted sections, hail-pocked siding — we handle repairs of all sizes, and we can match existing siding in many cases. If your siding was storm damaged, we'll document it and help with your insurance claim, just like we do with roofs.",
+          ],
+        },
+      ]}
+      faqs={[
+        {
+          question: "How long does siding installation take?",
+          answer:
+            "Most homes take three to five days depending on size and complexity. We'll give you a clear timeline with your written estimate and keep the site tidy throughout.",
+        },
+        {
+          question: "Which is better: vinyl or fiber cement siding?",
+          answer:
+            "It depends on your priorities. Vinyl is more affordable and nearly maintenance-free. Fiber cement is tougher, holds paint beautifully, and has a premium look, but costs more. We install both and will give you an honest comparison for your home and budget.",
+        },
+        {
+          question: "Can you repair just one damaged section of siding?",
+          answer:
+            "Often, yes. We can replace individual panels or sections, and in many cases match the existing color and profile. If your siding is older and weathered, we'll show you what a match will look like before committing.",
+        },
+        {
+          question: "Does new siding help with energy bills?",
+          answer:
+            "It can. Insulated vinyl siding and proper house wrap installation reduce air infiltration and add insulation value, which many homeowners notice in their heating and cooling costs.",
+        },
+      ]}
+    />
   );
 }

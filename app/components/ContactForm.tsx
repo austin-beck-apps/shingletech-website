@@ -137,7 +137,7 @@ export default function ContactForm() {
           onChange={handleChange}
           required
           disabled={status === 'loading'}
-          className="w-full px-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent text-slate-900 disabled:bg-slate-100"
+          className="w-full px-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-red-500 focus:border-transparent text-slate-900 disabled:bg-slate-100"
           placeholder="your@email.com"
         />
       </div>
@@ -186,7 +186,7 @@ export default function ContactForm() {
           required
           disabled={status === 'loading'}
           rows={4}
-          className="w-full px-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent text-slate-900 disabled:bg-slate-100"
+          className="w-full px-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-red-500 focus:border-transparent text-slate-900 disabled:bg-slate-100"
           placeholder="Tell us about your roofing needs..."
         ></textarea>
       </div>

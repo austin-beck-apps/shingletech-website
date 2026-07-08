@@ -1,58 +1,79 @@
-import Link from "next/link";
-import { FaTools, FaCheckCircle } from "react-icons/fa";
-import ServiceLandingLayout from "../../components/ServiceLandingLayout";
+import type { Metadata } from "next";
+import ServicePageLayout from "../../components/ServicePageLayout";
 
-export const metadata = {
-  title: "Roofing Repair & Storm Damage | ShingleTech - Washington, MO",
-  description: "24/7 roof repair and storm damage restoration in Franklin County, MO. Leak repair, shingle replacement, insurance claims, and emergency roofing. Free inspections.",
+export const metadata: Metadata = {
+  title: "Roof Repair & Storm Damage in Washington, MO — 24/7 Emergency Service",
+  description:
+    "24/7 emergency roof repair and storm damage restoration in Washington, MO. Leak repair, hail & wind damage, insurance claim assistance. Free inspections: (636) 221-7284.",
+  alternates: { canonical: "/services/roofing-repair-storm-damage" },
 };
 
-export default function RoofingRepairStormDamagePage() {
-  const features = [
-    "Storm damage inspection & repair",
-    "Leak detection and repair",
-    "Shingle replacement & patching",
-    "Insurance claim assistance",
-    "24/7 emergency response",
-    "Free estimates & inspections",
-  ];
-
+export default function RoofRepairPage() {
   return (
-    <ServiceLandingLayout
-      heroTitle="Roofing Repair & Storm Damage"
-      heroSubtitle="Fast, reliable roof repair and storm damage restoration. We're here 24/7 when you need us—Washington, MO and all of Franklin County."
-    >
-      <section className="py-20 bg-slate-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-col md:flex-row gap-8 items-center bg-white rounded-2xl shadow-xl p-8 md:p-12 border-t-4 border-red-600">
-            <div className="flex-shrink-0">
-              <FaTools className="text-6xl text-red-600" />
-            </div>
-            <div className="flex-1">
-              <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
-                When Storms Hit, We Respond
-              </h2>
-              <p className="text-lg text-slate-600 mb-6 leading-relaxed">
-                Hail, wind, and severe weather can leave your roof damaged and your home at risk. ShingleTech provides thorough inspections, honest assessments, and quality repairs—and we work with your insurance so you can focus on getting back to normal.
-              </p>
-              <div className="grid md:grid-cols-2 gap-3 mb-6">
-                {features.map((feature, i) => (
-                  <div key={i} className="flex items-center gap-2">
-                    <FaCheckCircle className="text-red-600 flex-shrink-0" />
-                    <span className="text-slate-700">{feature}</span>
-                  </div>
-                ))}
-              </div>
-              <Link
-                href="/#contact"
-                className="inline-block bg-red-600 hover:bg-red-700 text-white px-8 py-3 rounded-lg font-bold transition-colors shadow-lg"
-              >
-                Request a Quote
-              </Link>
-            </div>
-          </div>
-        </div>
-      </section>
-    </ServiceLandingLayout>
+    <ServicePageLayout
+      slug="roofing-repair-storm-damage"
+      title="Roof Repair & Storm Damage"
+      heroTitle="Roof Repair & Storm Damage Restoration"
+      heroSubtitle="Leak? Missing shingles? Hail damage? We respond 24/7 across the Washington, MO area — and we'll help you navigate the insurance process from start to finish."
+      features={[
+        "24/7 emergency response",
+        "Free storm damage inspections",
+        "Insurance claim assistance",
+        "Leak detection & repair",
+        "Emergency tarping",
+        "Licensed & insured",
+      ]}
+      sections={[
+        {
+          heading: "When Your Roof Can't Wait",
+          body: [
+            "Missouri storms don't keep business hours, and neither do we. When wind, hail, or fallen limbs damage your roof, call us any time — day or night. We'll secure your home with emergency tarping if needed, then get you a clear plan for permanent repairs.",
+            "Because we're local, we're usually on-site fast. No waiting days for an out-of-town crew while water works its way into your ceiling.",
+          ],
+          bullets: [
+            "Emergency tarping & temporary repairs",
+            "Wind & hail damage repair",
+            "Missing or damaged shingle replacement",
+            "Leak detection & repair",
+            "Flashing, vent & chimney repairs",
+            "Gutter and fascia storm damage",
+          ],
+        },
+        {
+          heading: "Honest Storm Damage Inspections",
+          body: [
+            "After big storms, out-of-state 'storm chasers' flood local neighborhoods with high-pressure sales tactics and disappear when the work is done. We're the opposite: a local company with a reputation to protect. Our inspections are free, documented with photos, and honest — if your roof doesn't need replacement, we'll say so.",
+          ],
+        },
+        {
+          heading: "We Speak Insurance",
+          body: [
+            "Storm damage claims can be confusing. We've helped homeowners through the process for over a decade: documenting damage properly, meeting your adjuster on-site, and making sure nothing legitimate gets missed. You deal with one local point of contact from first call to final nail.",
+          ],
+        },
+      ]}
+      faqs={[
+        {
+          question: "What should I do right after storm damage?",
+          answer:
+            "First, stay safe — don't climb on the roof. If water is coming in, move belongings and catch drips, then call us at (636) 221-7284. We can tarp the damage quickly, document everything with photos, and guide you on whether an insurance claim makes sense.",
+        },
+        {
+          question: "Will my insurance cover roof storm damage?",
+          answer:
+            "Most homeowner policies cover sudden storm damage from wind and hail, subject to your deductible. We document the damage thoroughly and can meet your adjuster on-site to make sure the assessment is fair and complete.",
+        },
+        {
+          question: "How do I know if my roof has hail damage?",
+          answer:
+            "Hail damage is often invisible from the ground — bruised shingles, cracked mats, and granule loss show up on close inspection. If your neighborhood took hail, get a free inspection. We'll show you photos of exactly what we find, and if there's no damage, we'll tell you that too.",
+        },
+        {
+          question: "Do you charge for emergency calls?",
+          answer:
+            "Inspections and estimates are always free. If emergency tarping or temporary repairs are needed to protect your home, we'll tell you the cost up front before any work begins.",
+        },
+      ]}
+    />
   );
 }
