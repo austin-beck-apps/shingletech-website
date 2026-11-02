@@ -11,7 +11,7 @@ export default function LocalBusinessSchema() {
     "@id": `${BUSINESS.url}/#business`,
     name: BUSINESS.name,
     description:
-      "Locally owned roofing and siding contractor serving Washington, MO and surrounding communities since 2013. Shingle roofing, metal roofing, siding, storm damage repair, and commercial roofing.",
+      "Locally owned roofing and siding contractor in Union, MO, serving Washington and surrounding communities since 2013. Shingle roofing, metal roofing, siding, storm damage repair, and commercial roofing.",
     url: BUSINESS.url,
     telephone: BUSINESS.phoneE164,
     email: BUSINESS.email,

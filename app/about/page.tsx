@@ -6,9 +6,9 @@ import CtaBand from "../components/CtaBand";
 import { BUSINESS, YEARS_IN_BUSINESS } from "../lib/business";
 
 export const metadata: Metadata = {
-  title: "About Us — Locally Owned Roofing Company in Washington, MO",
+  title: "About Us — Locally Owned Roofing Company in Union, MO",
   description:
-    "ShingleTech is a locally owned and operated roofing company in Washington, MO, serving Missouri homeowners since 2013. Meet the local team that treats your roof like their own.",
+    "ShingleTech is a locally owned and operated roofing company in Union, MO, serving Missouri homeowners since 2013. Meet the local team that treats your roof like their own.",
   alternates: { canonical: "/about" },
 };
 
@@ -47,7 +47,7 @@ export default function About() {
                   ShingleTech was founded in {BUSINESS.founded} by owner {BUSINESS.owner} with a
                   simple mission: give our neighbors the highest quality roofing at honest prices.
                   What started as a small local operation has grown into one of the most trusted
-                  names in roofing in Washington, MO and the surrounding communities — with a 4.9
+                  names in roofing in Union, Washington, and the surrounding communities — with a 4.9
                   star Google rating built almost entirely on referrals from homeowners and
                   business owners we&apos;ve served.
                 </p>

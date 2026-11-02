@@ -49,7 +49,7 @@ const HOME_FAQS = [
   {
     question: "What areas do you serve?",
     answer:
-      "We're based in Washington, MO and serve the surrounding communities including Union, Pacific, Sullivan, St. Clair, New Haven, and Gray Summit — see our Service Areas page for details.",
+      "We're based in Union, MO and serve the surrounding communities including Washington, Pacific, Sullivan, St. Clair, New Haven, and Gray Summit — see our Service Areas page for details.",
   },
 ];
 
@@ -121,7 +121,7 @@ export default function Home() {
           <div className="max-w-3xl">
             <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-4 py-2 text-sm font-semibold mb-6">
               <FaMapMarkerAlt className="text-red-400" aria-hidden />
-              Locally Owned &amp; Operated in Washington, MO
+              Locally Owned &amp; Operated in Union, MO
             </div>
             <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-6 leading-tight">
               <span className="text-red-500">Trusted</span> Roofing Experts,

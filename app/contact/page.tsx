@@ -6,9 +6,9 @@ import FaqSection from "../components/FaqSection";
 import { BUSINESS } from "../lib/business";
 
 export const metadata: Metadata = {
-  title: "Contact Us — Free Roofing Estimates in Washington, MO",
+  title: "Contact Us — Free Roofing Estimates in Union & Washington, MO",
   description:
-    "Get a free, no-obligation roofing or siding estimate from ShingleTech in Washington, MO. Call (636) 221-7284 or send us a message — 24/7 emergency service available.",
+    "Get a free, no-obligation roofing or siding estimate from ShingleTech in Union, MO. Call (636) 221-7284 or send us a message — 24/7 emergency service available.",
   alternates: { canonical: "/contact" },
 };
 
@@ -97,7 +97,7 @@ export default function ContactPage() {
                         <br />
                         {BUSINESS.address.locality}, {BUSINESS.address.region} {BUSINESS.address.postalCode}
                         <br />
-                        Serving Washington &amp; surrounding communities
+                        Serving Union, Washington &amp; surrounding communities
                       </p>
                     </div>
                   </li>

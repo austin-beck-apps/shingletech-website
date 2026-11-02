@@ -16,15 +16,16 @@ export const BUSINESS = {
   url: "https://shingletech.com",
   founded: "2013",
   address: {
-    street: "516 W 5th St",
-    locality: "Washington",
+    street: "313 Franklin Ave",
+    locality: "Union",
     region: "MO",
-    postalCode: "63090",
+    postalCode: "63084",
     country: "US",
   },
   geo: {
-    latitude: 38.5578,
-    longitude: -91.0126,
+    // Union, MO
+    latitude: 38.4501,
+    longitude: -91.0085,
   },
 } as const;
 
@@ -60,7 +61,7 @@ export const SERVICE_AREAS: ServiceArea[] = [
     city: "Washington",
     state: "MO",
     blurb:
-      "Washington is our hometown. From historic downtown homes near the Missouri River to newer neighborhoods off Highway 100, we've been protecting Washington roofs since 2013 — and chances are we've already worked on a house on your street.",
+      "Washington is where ShingleTech got its start in 2013. From historic downtown homes near the Missouri River to newer neighborhoods off Highway 100, we've been protecting Washington roofs from day one — and chances are we've already worked on a house on your street.",
     landmarks: ["Downtown Washington", "Washington Riverfront", "Highway 100 corridor", "Phoenix Center"],
   },
   {
@@ -68,7 +69,7 @@ export const SERVICE_AREAS: ServiceArea[] = [
     city: "Union",
     state: "MO",
     blurb:
-      "As the county seat just down Highway 47, Union is one of our busiest service areas. We handle everything from full roof replacements in established neighborhoods to storm damage repairs after the hail and wind events that roll through the area.",
+      "Union is home base — our shop is right on Franklin Ave. We handle everything from full roof replacements in established neighborhoods to storm damage repairs after the hail and wind events that roll through the area, with the fastest response times anywhere in our service area.",
     landmarks: ["Downtown Union", "East Central College area", "Highway 47 & 50 corridor"],
   },
   {

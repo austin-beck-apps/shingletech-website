@@ -6,7 +6,7 @@ import CtaBand from "../components/CtaBand";
 import { SERVICE_AREAS } from "../lib/business";
 
 export const metadata: Metadata = {
-  title: "Service Areas — Roofing Contractor Serving Washington, MO & Beyond",
+  title: "Service Areas — Roofing Contractor Serving Union, Washington, MO & Beyond",
   description:
     "ShingleTech provides roofing, siding, and storm damage services throughout Washington, Union, Pacific, Sullivan, St. Clair, New Haven, Gray Summit, MO and surrounding communities.",
   alternates: { canonical: "/service-areas" },
@@ -26,7 +26,7 @@ export default function ServiceAreasPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h1 className="text-4xl md:text-5xl font-bold mb-4">Communities We Serve</h1>
           <p className="text-xl text-slate-300 max-w-3xl mx-auto">
-            We&apos;re a local crew based in Washington, MO — which means when you call, you get
+            We&apos;re a local crew based in Union, MO — which means when you call, you get
             neighbors, not a call center. Here&apos;s where we work every week.
           </p>
         </div>

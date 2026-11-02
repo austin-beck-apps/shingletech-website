@@ -20,7 +20,7 @@ export default function Footer() {
               </div>
             </div>
             <p className="text-slate-400 leading-relaxed mb-4">
-              A locally owned and operated roofing and siding company serving Washington, MO and
+              A locally owned and operated roofing and siding company in Union, MO, serving Washington and
               the surrounding communities since {BUSINESS.founded}. Licensed, insured, and proud
               to give back to the community we call home.
             </p>

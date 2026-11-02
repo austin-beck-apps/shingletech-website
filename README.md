@@ -55,5 +55,5 @@ Push to GitHub and deploy on Vercel (or any Node host). Build command `npm run b
 
 - [ ] Confirm the Google reviews link in `GoogleReviewsSection.tsx` points at the live Google Business Profile.
 - [x] Review quotes approved (sourced verbatim from public GuildQuality/BBB reviews).
-- [x] Street address published: 516 W 5th St (footer, contact page, schema). Keep it identical to the Google Business Profile listing.
+- [x] Street address published: 313 Franklin Ave, Union, MO 63084 (footer, contact page, schema). Keep it identical to the Google Business Profile listing — update GBP, BBB, and other directory listings to the new address so NAP citations stay consistent.
 - [ ] Submit `https://shingletech.com/sitemap.xml` in Google Search Console after deploy.

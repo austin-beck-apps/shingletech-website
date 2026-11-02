@@ -122,7 +122,10 @@ export default async function ServiceAreaPage({ params }: PageProps) {
               {
                 icon: <FaMapMarkerAlt className="text-3xl text-red-600" aria-hidden />,
                 title: "We're Actually Local",
-                text: `We're based in Washington, MO — minutes from ${area.city}. No storm chasers, no out-of-state crews. When the job is done, we're still here.`,
+                text:
+                  area.slug === "union-mo"
+                    ? "Our shop is right here in Union on Franklin Ave. No storm chasers, no out-of-state crews. When the job is done, we're still here."
+                    : `We're based in Union, MO — minutes from ${area.city}. No storm chasers, no out-of-state crews. When the job is done, we're still here.`,
               },
               {
                 icon: <FaBolt className="text-3xl text-red-600" aria-hidden />,

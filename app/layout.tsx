@@ -20,14 +20,16 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   metadataBase: new URL(BUSINESS.url),
   title: {
-    default: "ShingleTech | Roofing Contractor in Washington, MO — Locally Owned Since 2013",
+    default: "ShingleTech | Roofing Contractor in Union & Washington, MO",
     template: "%s | ShingleTech",
   },
   description:
-    "ShingleTech is a locally owned roofing and siding contractor in Washington, MO. Shingle roofing, metal roofing, siding, storm damage repair & commercial roofing. Licensed, insured, 24/7 emergency service. Free estimates: (636) 221-7284.",
+    "ShingleTech is a locally owned roofing and siding contractor in Union, MO, serving Washington and all of Franklin County. Shingle roofing, metal roofing, siding, storm damage repair & commercial roofing. Licensed, insured, 24/7 emergency service. Free estimates: (636) 221-7284.",
   keywords: [
+    "roofing contractor Union MO",
     "roofing contractor Washington MO",
     "roofer near me",
+    "roof replacement Union MO",
     "roof replacement Washington MO",
     "roof repair Franklin County",
     "shingle roofing",
@@ -43,9 +45,9 @@ export const metadata: Metadata = {
     canonical: "/",
   },
   openGraph: {
-    title: "ShingleTech | Roofing Contractor in Washington, MO",
+    title: "ShingleTech | Roofing Contractor in Union & Washington, MO",
     description:
-      "Locally owned roofing & siding contractor serving Washington, MO since 2013. Licensed, insured, and available 24/7 for emergency service. Free estimates.",
+      "Locally owned roofing & siding contractor in Union, MO, serving Washington and surrounding communities since 2013. Licensed, insured, and available 24/7 for emergency service. Free estimates.",
     url: BUSINESS.url,
     siteName: BUSINESS.name,
     locale: "en_US",
@@ -61,9 +63,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "ShingleTech | Roofing Contractor in Washington, MO",
+    title: "ShingleTech | Roofing Contractor in Union & Washington, MO",
     description:
-      "Locally owned roofing & siding contractor serving Washington, MO since 2013. Free estimates: (636) 221-7284.",
+      "Locally owned roofing & siding contractor in Union, MO, serving Washington and surrounding communities since 2013. Free estimates: (636) 221-7284.",
     images: ["/hero-bg.jpg"],
   },
   robots: {
@@ -79,7 +81,7 @@ export const metadata: Metadata = {
   },
   other: {
     "geo.region": "US-MO",
-    "geo.placename": "Washington, Missouri",
+    "geo.placename": "Union, Missouri",
     "geo.position": `${BUSINESS.geo.latitude};${BUSINESS.geo.longitude}`,
     ICBM: `${BUSINESS.geo.latitude}, ${BUSINESS.geo.longitude}`,
   },
